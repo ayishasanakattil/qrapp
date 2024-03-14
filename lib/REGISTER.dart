@@ -1,69 +1,86 @@
 import 'package:flutter/material.dart';
 import 'package:qrapplication/login.dart';
+import 'package:qrapplication/main.dart';
+import 'package:qrapplication/qrpage.dart';
 
-class register extends StatefulWidget {
-  const register({super.key});
+class Reg extends StatefulWidget {
+  const Reg({super.key});
 
   @override
-  State<register> createState() => _registerState();
+  State<Reg> createState() => _RegState();
 }
 
-class _registerState extends State<register> {
+class _RegState extends State<Reg> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.teal,
-        body: Center(
-          child: Column(
-            children: [
-              Text(
-                'REGISTER',
-                style: TextStyle(
-                    color:Colors.white,
-                    fontSize: 45,
-                    fontWeight: FontWeight.bold
-                ),
-              ),
-              SizedBox(height: 50,),
-              TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),),
-                  hintText: 'Enter your name'
-                ),
-              ),
-              SizedBox(height: 25,),
-              TextField(
+    return Scaffold(
+      backgroundColor: Colors.teal,
+      body: Center(
+        child: Column(
+          children: [
+            SizedBox(
+              width: 100,
+              height: 20,
+            ),
+            Text('Registration',style: TextStyle(fontSize: 30),),
+            SizedBox(
+              width: 100,
+              height: 50,
+            ),
+            Container(
+              width: 200,
+              height: 100,
+              child: TextField(
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),),
-                    hintText: 'enter your mail'
+                        borderRadius: BorderRadius.circular(20)
+                    ),
+                    labelText: 'Enter your Name'
                 ),
               ),
-              SizedBox(height: 25,),
-              TextField(
+            ),
+            Container(
+              width: 200,
+              height: 100,
+              child: TextField(
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),),
-                    hintText: 'enter your roll no'
+                        borderRadius: BorderRadius.circular(20)
+                    ),
+                    labelText: 'Enter your Roll no'
                 ),
               ),
-              SizedBox(height: 25,),
-              TextField(
+            ),
+            Container(
+              width: 200,
+              height: 100,
+              child: TextField(
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),),
-                    hintText: 'enter your password'
+                        borderRadius: BorderRadius.circular(20)
+                    ),
+                    labelText: 'Enter your Email'
                 ),
               ),
-              SizedBox(height: 25,),
-              TextButton(onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => MyApp(), ));
-              }, child: Text('REGISTER'),),
-
-            ],
-          ),
+            ),
+            Container(
+              width: 200,
+              height: 100,
+              child: TextField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20)
+                    ),
+                    labelText: 'Enter your Password'
+                ),
+              ),
+            ),
+            ElevatedButton(onPressed:() {
+              Navigator.push(context,MaterialPageRoute(builder: (context)=> Log()));
+            }, child: Text('REGISTER',style: TextStyle(color: Colors.black),),
+              style: TextButton.styleFrom(backgroundColor: Colors.white),
+            )
+          ],
         ),
       ),
     );
